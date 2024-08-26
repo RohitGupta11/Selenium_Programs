@@ -1,0 +1,46 @@
+package DAY1;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
+/*
+ 1.Launch browser(chrome)
+ 2.open url
+ 3.validate title
+ 4. close browser
+ 
+ */
+public class FirstTestCase {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+		// 1.Launch browser(chrome)
+		//ChromeDriver driver=new ChromeDriver();
+		//WebDriver driver=new ChromeDriver();
+		WebDriver driver=new EdgeDriver();
+
+		//2.open url
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		
+		//4.validate title
+
+		String act_title=driver.getTitle();
+		if(act_title.equals("OrangeHRM"))
+		{
+			System.out.println("Test Passed");
+		}
+		else
+		{
+			System.out.println("Test Fail");
+		}
+
+		//3.close browser
+		driver.close();
+		driver.quit();
+		
+	}
+
+}
